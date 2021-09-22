@@ -81,7 +81,7 @@ namespace BooksManager.View
             try
             {
                 if (ControllerBook.AddBook(tbName.Text, tbDescription.Text, 
-                    tbPrice.Text,cbGowardlavcraft.SelectedItem,cbStivenKing.SelectedItem,cbJorjOryel.SelectedItem))
+                    tbPrice.Text,cbImage.SelectedItem, cbGowardlavcraft.SelectedItem,cbStivenKing.SelectedItem,cbJorjOryel.SelectedItem))
                 {
                     MessageBox.Show("Обьект добавлен в БД");
                 }

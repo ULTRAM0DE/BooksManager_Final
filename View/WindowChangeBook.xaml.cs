@@ -86,7 +86,7 @@ namespace BooksManager.View
             try
             {
                 if (Controll.ControllerBook.ChangeGame(tbName.Text, tbDescription.Text, 
-                    tbPrice.Text, cbGowardLavcraft.SelectedItem, cbJorjOryel.SelectedItem, cbStivenKing.SelectedItem,Books.Books))
+                    tbPrice.Text, cbImage.SelectedItem ,cbGowardLavcraft.SelectedItem, cbJorjOryel.SelectedItem, cbStivenKing.SelectedItem,Books.Books))
                 {
                     MessageBox.Show("Обьект сохранен");
                 }

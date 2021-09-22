@@ -33,14 +33,16 @@ namespace BooksManager.Controll
             }
         }
 
-        internal static bool AddBook(string name,string description,string price,object gowardlavcraft, object stivenking, object jorjoryel)
+        internal static bool AddBook(string name,string description,string price,object image,object gowardlavcraft, object stivenking, object jorjoryel)
         {
             DB.Books books = new DB.Books();
 
             try
             {
                 books = new DB.Books();
-               
+                Image im = image as Image;
+
+                books.ImagePath = @"/Image\" + im.NameImage;
                 books.Discription = description;
                 books.Id_GowardLavcraft = GetIdGowardLavcraft(gowardlavcraft as string);
                 books.Id_StivenKing = GetIdStivenKing(stivenking as string);
@@ -120,7 +122,7 @@ namespace BooksManager.Controll
             }
         }
 
-        internal static bool ChangeGame(string name, string description, string price, object gowardlavcraft, object jorjoryel, object stivenking, DB.Books books)
+        internal static bool ChangeGame(string name, string description, string price,object image, object gowardlavcraft, object jorjoryel, object stivenking, DB.Books books)
         {
             DB.GGWPEntities2 entities2 = new GGWPEntities2();
             DB.Books book = entities2.Books.Find(books.Id);
@@ -128,7 +130,9 @@ namespace BooksManager.Controll
             try
             {
                 books = new DB.Books();
+                Image im = image as Image;
 
+                books.ImagePath = @"/Image\" + im.NameImage;
                 books.Discription = description;
                 books.Id_GowardLavcraft = GetIdGowardLavcraft(gowardlavcraft as string);
                 books.Id_StivenKing = GetIdStivenKing(stivenking as string);
