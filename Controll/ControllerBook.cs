@@ -2,6 +2,7 @@
 using BooksManager.View;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,9 +41,9 @@ namespace BooksManager.Controll
             try
             {
                 books = new DB.Books();
-                Image im = image as Image;
+                //Image im = image as Image;
 
-                books.ImagePath = @"/Image\" + im.NameImage;
+               // books.ImagePath = @"/Image\" + im.NameImage;
                 books.Discription = description;
                 books.Id_GowardLavcraft = GetIdGowardLavcraft(gowardlavcraft as string);
                 books.Id_StivenKing = GetIdStivenKing(stivenking as string);
@@ -153,9 +154,8 @@ namespace BooksManager.Controll
             }
             try
             {
-                DB.GGWPEntities2 entities1 = new DB.GGWPEntities2();
-                entities1.Books.Add(books);
-                entities1.SaveChanges();
+                entities2.Books.AddOrUpdate(books);
+                entities2.SaveChanges();
                 return true;
             }
             catch

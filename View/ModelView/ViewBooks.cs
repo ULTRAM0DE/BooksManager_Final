@@ -25,9 +25,9 @@ namespace BooksManager.View.ModelView
 
         public ViewBooks(DB.Books books)
         {
-            Image = string.IsNullOrWhiteSpace(books.ImagePath) ? @"/Image\NoImage.jpg" : books.ImagePath;
+            Image = string.IsNullOrWhiteSpace(books.ImagePath) ? @"/Image\no image.jpg" : books.ImagePath;
 
-            Image = books.ImagePath;
+            //Image = books.ImagePath;
             Books = books;
             Name = $"{books.Name} | {books.Name}";
             Price = $"{books.Price}";
