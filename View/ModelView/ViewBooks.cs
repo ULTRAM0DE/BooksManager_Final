@@ -14,6 +14,7 @@ namespace BooksManager.View.ModelView
         public string Image { get; set; }
         public string Name { get; set; }
         public string Price { get; set; }
+        public string Discription { get; set; }
        
        public int StivenKingID{get;set;}
        public int  GowardLavсraftID{get;set;}
@@ -25,10 +26,11 @@ namespace BooksManager.View.ModelView
 
         public ViewBooks(DB.Books books)
         {
-            Image = string.IsNullOrWhiteSpace(books.ImagePath) ? @"/Image\no image.jpg" : books.ImagePath;
+            Image = string.IsNullOrWhiteSpace(books.ImagePath) ? @"/Image\no image.png" : books.ImagePath;
 
             //Image = books.ImagePath;
             Books = books;
+            Discription = $"{books.Discription}";
             Name = $"{books.Name} | {books.Name}";
             Price = $"{books.Price}";
             Libraly = $"Стивен кинг:{books.StivenKing.YesOrNo} | Джордж Оруэл:{books.JorjOryel.YesOrNo} | Говард Лавкрафт:{books.GowardLavcraft.YesOrNo}";
