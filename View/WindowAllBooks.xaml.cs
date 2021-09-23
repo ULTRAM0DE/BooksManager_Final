@@ -51,7 +51,11 @@ namespace BooksManager.View
 
             }
         }
-
+        /// <summary>
+        /// Окно редактирования
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LbContent_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             var sours = e.OriginalSource as Border;
@@ -78,6 +82,12 @@ namespace BooksManager.View
             labelRezult.Content = $"В базе{lbContent.Items.Count}записей";
 
         }
+        /// <summary>
+        /// Обновление контента
+        /// </summary>
+        /// <param name="start"></param>
+        /// <param name="end"></param>
+        /// <param name="books"></param>
         private void RefreshContent(int start, int end, List<View.ModelView.ViewBooks> books)
         {
             List<View.ModelView.ViewBooks> s = new List<ViewBooks>();
@@ -126,7 +136,7 @@ namespace BooksManager.View
                 throw new Exception(ex.Message);
             }
         }
-
+        #region #Кнопки перехода между страницами
         private void DinamicStackButton(int count)
         {
             spButtons.Children.Clear();
@@ -139,6 +149,7 @@ namespace BooksManager.View
             }
             spButtons.Children.Add(CreateButton("btUp", ">>", btUp_Click));
         }
+        
         private Button CreateButton(string name, string content, RoutedEventHandler action)
         {
             var b = new Button() { Name = name, Content = content, Margin = new Thickness(5) };
@@ -177,7 +188,7 @@ namespace BooksManager.View
             }
         }
 
-       
+        #endregion
 
         public int GetCountButton(int count)
         {
@@ -191,7 +202,11 @@ namespace BooksManager.View
             }
 
         }
-
+        /// <summary>
+        /// Поиск 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
             var s = content.Where(x => x.Books.Name.ToUpper().StartsWith(txSearch.Text.ToUpper())).ToList();
@@ -211,14 +226,22 @@ namespace BooksManager.View
 
             Run(s);
         }
-
+        /// <summary>
+        /// Переход в окно добавления
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btAddBook_Click(object sender, RoutedEventArgs e)
         {
             View.WindowAddBook windowAddBook = new WindowAddBook();
             windowAddBook.Show();
             this.Close();
         }
-
+       /// <summary>
+       /// Кнопка назад
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
         private void btDn_Click(object sender, RoutedEventArgs e)
         {
             View.WindowMenu windowMenu = new WindowMenu();
@@ -226,8 +249,8 @@ namespace BooksManager.View
             this.Close();
         }
 
-       
 
+        #region #Фильтр
         private void CbFilter_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             switch (CbFilter.SelectedItem.ToString())
@@ -256,4 +279,5 @@ namespace BooksManager.View
             Run(content);
         }
     }
+    #endregion
 }

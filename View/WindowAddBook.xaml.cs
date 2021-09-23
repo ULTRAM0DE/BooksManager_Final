@@ -44,14 +44,22 @@ namespace BooksManager.View
             cbGowardlavcraft.ItemsSource = ConterollerLibralyBooks.GetGowardLavcraftComboBox();
             cbImage.ItemsSource = ControllerImage.GetImages();
         }
-
+        /// <summary>
+        /// Кнопка назад
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btDn_Click(object sender, RoutedEventArgs e)
         {
             View.WindowMenu windowMenu = new WindowMenu();
             windowMenu.Show();
             this.Close();
         }
-
+        /// <summary>
+        /// Кнопка добавления
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btAdd_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(tbName.Text))

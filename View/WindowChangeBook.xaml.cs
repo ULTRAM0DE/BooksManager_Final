@@ -25,6 +25,10 @@ namespace BooksManager.View
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// Редактирование
+        /// </summary>
+        /// <param name="books"></param>
         public WindowChangeBook(ModelView.ViewBooks books) : this()
         {
             Books = books;
@@ -49,7 +53,7 @@ namespace BooksManager.View
                   .Single(x => x == books.Books.JorjOryel.YesOrNo);
                 cbJorjOryel.SelectedItem = cbJorjOryel.Items.IndexOf(jo);
 
-                cbImage.ItemsSource = Controll.ControllerImage.GetImages();
+                cbImage.ItemsSource = ControllerImage.GetImages();
                 cbImage.SelectedIndex = 1;
             }
             catch
@@ -57,6 +61,11 @@ namespace BooksManager.View
                 MessageBox.Show("Error");
             }
         }
+        /// <summary>
+        /// Кнопка удаления
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btRemove_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -73,14 +82,22 @@ namespace BooksManager.View
             }
 
         }
-
+        /// <summary>
+        /// Кнопка назад
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btDn_Click(object sender, RoutedEventArgs e)
         {
             WindowAllBooks windowAllBooks = new WindowAllBooks();
             windowAllBooks.Show();
             this.Close();
         }
-
+        /// <summary>
+        /// Кнопка добавить
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btAdd_Click(object sender, RoutedEventArgs e)
         {
             try

@@ -28,13 +28,22 @@ namespace BooksManager.View
         {
             Title += $"Вход ({user.Name}) {user.TypeUser.Name}";
         }
+        /// <summary>
+        /// Кнопка назад
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btDn_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Close();
         }
-
+        /// <summary>
+        /// Окно со списком всех книг
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btAllBooks_Click(object sender, RoutedEventArgs e)
         {
             WindowAllBooks windowAllBooks = new WindowAllBooks();

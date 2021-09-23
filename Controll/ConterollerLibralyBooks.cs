@@ -8,6 +8,10 @@ namespace BooksManager.Controll
 {
     public class ConterollerLibralyBooks
     {
+        /// <summary>
+        /// Получение Id GowardLavcraft
+        /// </summary>
+        /// <returns></returns>
         internal static List<string> GetGowardLavcraftComboBox()
         {
             List<string> types = new List<string>();
@@ -26,7 +30,7 @@ namespace BooksManager.Controll
 
 
         /// <summary>
-        /// Получение Id Epic Games для ComboBox
+        /// Получение Id JorjOryel для ComboBox
         /// </summary>
         /// <returns></returns>
         internal static List<string> GetJorjOryelComboBox()
@@ -46,7 +50,7 @@ namespace BooksManager.Controll
         }
 
         /// <summary>
-        /// Получение Id Ubisoft Store
+        /// Получение Id Stiven King
         /// </summary>
         /// <returns></returns>
         internal static List<string> GetStivenKingComboBox()

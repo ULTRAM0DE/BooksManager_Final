@@ -33,7 +33,17 @@ namespace BooksManager.Controll
                 throw new Exception("ошибка БД");
             }
         }
-
+        /// <summary>
+        /// Метод добавить
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="price"></param>
+        /// <param name="image"></param>
+        /// <param name="gowardlavcraft"></param>
+        /// <param name="stivenking"></param>
+        /// <param name="jorjoryel"></param>
+        /// <returns></returns>
         internal static bool AddBook(string name,string description,string price,object image,object gowardlavcraft, object stivenking, object jorjoryel)
         {
             DB.Books books = new DB.Books();
@@ -77,7 +87,10 @@ namespace BooksManager.Controll
             
             
         }
-
+        /// <summary>
+        /// Метод удаления
+        /// </summary>
+        /// <param name="books"></param>
         internal static void Remove(DB.Books books)
         {
             try
@@ -122,7 +135,18 @@ namespace BooksManager.Controll
                 throw new Exception("Магазин не найден");
             }
         }
-
+        /// <summary>
+        /// Метод Редактирования
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="price"></param>
+        /// <param name="image"></param>
+        /// <param name="gowardlavcraft"></param>
+        /// <param name="jorjoryel"></param>
+        /// <param name="stivenking"></param>
+        /// <param name="books"></param>
+        /// <returns></returns>
         internal static bool ChangeGame(string name, string description, string price,object image, object gowardlavcraft, object jorjoryel, object stivenking, DB.Books books)
         {
             DB.GGWPEntities2 entities2 = new GGWPEntities2();

@@ -199,7 +199,6 @@
   <ItemGroup>
     <Resource Include="Image\2.jpg" />
     <Resource Include="Image\3.jpg" />
-    <Content Include="Image\1.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DB\Model1.Context.tt">
@@ -212,6 +211,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Image\122.jpg" />
+    <Resource Include="Image\1.jpg" />
     <Resource Include="Image\no image.png" />
     <Resource Include="Image\111.jpg" />
   </ItemGroup>
